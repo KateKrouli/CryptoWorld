@@ -5,16 +5,33 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/styles.css">
 </head> 
-<body>
+<body data-theme="1xbet">
   <header>
+     <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div> 
     <div class="header main-width">
         <div class="header__logo">
-            <img src="images/logo-1xbet.webp" alt="Logo" class="logo--1x">
-            <img src="images/logo-melbet.webp" alt="Logo" class="logo--mel">
+            <img src="images/logo-1xbet.webp" alt="Logo" class="logo--1xbet">
+            <img src="images/logo-melbet.webp" alt="Logo" class="logo--melbet">
+        </div>
+        <div class="header__nav">
+           <nav>
+                <a class="nav-item" href="#instruction" data-i18n="nav.instruction">How It Works</a>
+                <a class="nav-item" href="#crypto" data-i18n="nav.crypto">Crypto</a>
+                <a class="nav-item" href="#features" data-i18n="nav.features">Features</a>
+                <a class="nav-item" href="#comparison" data-i18n="nav.comparison">Comparison</a>
+                <a class="nav-item" href="#security" data-i18n="nav.security">Security</a>
+                <a class="nav-item" href="#faq" data-i18n="nav.faq">FAQ</a>
+           </nav>
         </div>
         <div class="lang-switcher" id="langSwitcher">
             <button class="lang-switcher__current" type="button">
                 <span class="lang-switcher__label">EN</span>
+                <i><svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">
+                    <path d="M0.583496 0.583252L4.0835 4.08325L7.5835 0.583252" stroke="white" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </i>
             </button>
 
             <ul class="lang-switcher__list">
@@ -28,7 +45,56 @@
 
     </div>
 </header>
-  
+  <section class="top-block">
+    <div class="top-block__container main-width">
+        <div class="top-block__label">
+            <i></i>
+            <span data-i18n="top.label">Live Crypto Betting</span>
+        </div>    
+        <h1 class="top-block__title top-block__title--1xbet">
+            <div data-i18n="top.title">Fast & Furious</div>
+            <span data-i18n="top.title.span.xbet">Crypto World on 1xBet</span>
+        </h1>
+        <h1 class="top-block__title top-block__title--melbet">
+            <div data-i18n="top.title">Fast & Furious</div>
+            <span data-i18n="top.title.span.melbet">Crypto World on Melbet</span>
+        </h1>
+        <div class="top-block__text" data-i18n="top.text">
+            Experience the next generation of betting. Instant payouts, zero
+            limits, and total anonymity with over 30 cryptocurrencies.
+        </div>
+        <a data-i18n="top.btn" class="top-block__btn btn">
+            Claim Crypto
+        </a>
+        <div class="top-block__digits">
+            <div class="top-block__digits-item">
+                <div data-counter="30">0+</div>
+                <span data-i18n="top.degits.cryptos">Cryptos</span>
+            </div>
+             <div class="top-block__digits-item">
+                <div data-counter="0">0%</div>
+                <span data-i18n="top.degits.commition">Commission</span>
+            </div>
+             <div class="top-block__digits-item">
+                <div data-counter="5000000">0+</div>
+                <span data-i18n="top.degits.users">Users</span>
+            </div>
+        </div>
+    </div>
+    <a href="" class="top-block__link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M5.24984 19.2499C3.49984 20.7199 2.9165 25.0832 2.9165 25.0832C2.9165 25.0832 7.27984 24.4999 8.74984 22.7499C9.57817 21.7699 9.5665 20.2649 8.64484 19.3549C8.19136 18.9221 7.59401 18.672 6.96743 18.6526C6.34086 18.6332 5.72919 18.8459 5.24984 19.2499Z" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 17.5L10.5 14C11.1208 12.3893 11.9026 10.8454 12.8333 9.39163C14.1927 7.21811 16.0856 5.42852 18.3318 4.19307C20.5781 2.95762 23.1031 2.3174 25.6667 2.3333C25.6667 5.50663 24.7567 11.0833 18.6667 15.1666C17.193 16.0985 15.6297 16.8802 14 17.5Z" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M10.4998 14.0001H4.6665C4.6665 14.0001 5.30817 10.4651 6.99984 9.33344C8.88984 8.07344 12.8332 9.33344 12.8332 9.33344" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M14 17.5001V23.3334C14 23.3334 17.535 22.6917 18.6667 21.0001C19.9267 19.1101 18.6667 15.1667 18.6667 15.1667" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
+         </svg>
+            <!-- Градиентные круги света -->
+            <div class="light-beam beam-1"></div>
+            <div class="light-beam beam-2"></div>
+            <div class="light-beam beam-3"></div>
+            <div class="light-beam beam-4"></div>
+    </a>
+</section>
   <footer><div class="footer">
     <div class="footer__line footer__line--1"></div>
     <div class="footer__btn"><div data-i18="footer.btn">Share Journey</div></div>

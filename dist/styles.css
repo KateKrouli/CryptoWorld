@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -109,11 +110,8 @@ body {
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-around;
-  height: 100vh;
-  max-height: 100vh;
-  transition: background 0.3s ease;
 }
 
 a {
@@ -157,30 +155,86 @@ img {
   border: 0;
 }
 
+h1 {
+  margin: 0;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 10px;
 }
 
+.btn {
+  display: flex;
+  height: 56px;
+  padding: 19px 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  color: #FFF;
+  text-align: center;
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+
 .main-width {
   width: 100%;
-  max-width: 800px;
-  padding: 0 12px;
+  max-width: 1280px;
+  padding: 0 24px;
   margin: 0 auto;
 }
 
-.day, .pre-ramadan {
-  background: url(images/day.webp) no-repeat center center fixed;
-  background-size: cover;
+body[data-theme="1xbet"] .btn {
+  background: #38F;
+  box-shadow: 0 10px 30px -10px rgba(51, 136, 255, 0.4);
 }
-
-.night {
-  background: url(images/night.webp) no-repeat center center fixed;
-  background-size: cover;
+body[data-theme="1xbet"] .logo--1xbet {
+  display: block;
 }
-
-.pre-ramadan .footer {
+body[data-theme="1xbet"] .logo--melbet {
   display: none;
+}
+body[data-theme="1xbet"] .progress-bar {
+  background: #38F;
+  box-shadow: 0 0 20px 0 #38F;
+}
+body[data-theme="1xbet"] .top-block {
+  background: url(images/top-bg.webp) top center no-repeat;
+  background-size: cover;
+}
+body[data-theme="1xbet"] .top-block__title--1xbet {
+  display: flex;
+}
+body[data-theme="1xbet"] .top-block__title--melbet {
+  display: none;
+}
+body[data-theme="1xbet"] .top-block__label i {
+  background: #00D4FF;
+}
+body[data-theme="1xbet"] .top-block__title span {
+  color: #38F;
+}
+body[data-theme="1xbet"] .top-block__link {
+  background: #38F;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+body[data-theme="1xbet"] .top-block__link:hover {
+  background: linear-gradient(135deg, #38F 0%, #00D4FF 100%);
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  z-index: 99;
 }
 
 .header {
@@ -190,6 +244,23 @@ p {
   position: relative;
   z-index: 9;
 }
+.header__nav {
+  margin: auto;
+}
+.header__nav nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.header__nav nav a.nav-item {
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  font-family: "IBM Plex Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
 .header .lang-switcher {
   position: relative;
 }
@@ -197,6 +268,18 @@ p {
   display: flex;
   align-items: center;
   cursor: pointer;
+  gap: 8px;
+}
+.header .lang-switcher__current i {
+  transition: all 0.3s ease;
+}
+.header .lang-switcher__label {
+  color: #FFF;
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
 }
 .header .lang-switcher__list {
   position: absolute;
@@ -205,11 +288,333 @@ p {
   display: none;
   z-index: 10;
 }
+.header .lang-switcher__option {
+  cursor: pointer;
+}
 .header .lang-switcher--open .lang-switcher__list {
   display: block;
 }
-.header .lang-switcher__option {
+.header .lang-switcher--open .lang-switcher__current i {
+  transform: rotate(180deg);
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px; /* Толщина полосы */
+  background: rgba(0, 0, 0, 0.1); /* Цвет фона полосы */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+.top-block {
+  height: 100vh;
+  padding-top: 97px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-block__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+.top-block__label {
+  display: flex;
+  padding: 7px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 33554400px;
+  border: 1px solid rgba(51, 136, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+.top-block__label i {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+.top-block__label span {
+  color: #FFF;
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.top-block__title {
+  flex-direction: column;
+  gap: 12px;
+  font-family: "IBM Plex Sans";
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 68.4px;
+  letter-spacing: -3.6px;
+}
+.top-block__title div {
+  color: #FFF;
+}
+.top-block__text {
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "IBM Plex Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 29px;
+  max-width: 505px;
+}
+.top-block__digits {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.top-block__digits-item {
+  display: flex;
+  flex-direction: column;
+}
+.top-block__digits-item div {
+  color: #FFF;
+  font-family: "IBM Plex Sans";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+}
+.top-block__digits-item span {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "IBM Plex Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+.top-block__link {
+  position: fixed;
+  right: 75px;
+  bottom: 115px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  animation: floatPulse 3s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(51, 136, 255, 0.3), 0 8px 24px rgba(51, 136, 255, 0.2);
+  }
+  25% {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(51, 136, 255, 0.4), 0 16px 40px rgba(51, 136, 255, 0.3), 0 24px 60px rgba(51, 136, 255, 0.2);
+  }
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 28px rgba(51, 136, 255, 0.5), 0 24px 56px rgba(51, 136, 255, 0.4), 0 36px 84px rgba(51, 136, 255, 0.3);
+  }
+  75% {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(51, 136, 255, 0.4), 0 16px 40px rgba(51, 136, 255, 0.3), 0 24px 60px rgba(51, 136, 255, 0.2);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(51, 136, 255, 0.3), 0 8px 24px rgba(51, 136, 255, 0.2);
+  }
+}
+.pulsing-btn {
+  width: 64px;
+  height: 64px;
+  background: #38F;
+  border: none;
+  border-radius: 50%;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  z-index: 1;
+  /* Легкая тень для кнопки */
+  box-shadow: 0 4px 20px rgba(51, 136, 255, 0.4);
+  transition: transform 0.3s ease;
+  animation: lanternFloat 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Анимация подъема кнопки (только вверх) */
+@keyframes lanternFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+/* Стили для световых лучей */
+.light-beam {
+  position: absolute;
+  top: 100%; /* Начинаются от нижнего края кнопки */
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Первый луч - самый яркий и узкий */
+.beam-1 {
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(ellipse at center, rgba(51, 136, 255, 0.8) 0%, rgba(51, 136, 255, 0.6) 20%, rgba(51, 136, 255, 0.4) 40%, rgba(51, 136, 255, 0.2) 60%, transparent 80%);
+  filter: brightness(1.1);
+  animation: beamPulse 3s ease-in-out infinite;
+}
+
+/* Второй луч - шире и мягче */
+.beam-2 {
+  width: 120px;
+  height: 60px;
+  background: radial-gradient(ellipse at center, rgba(51, 136, 255, 0.6) 0%, rgba(51, 136, 255, 0.4) 20%, rgba(51, 136, 255, 0.3) 40%, rgba(51, 136, 255, 0.1) 60%, transparent 80%);
+  animation: beamPulse 3s ease-in-out infinite 0.2s;
+}
+
+/* Третий луч - самый широкий */
+.beam-3 {
+  width: 160px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(51, 136, 255, 0.4) 0%, rgba(51, 136, 255, 0.3) 15%, rgba(51, 136, 255, 0.2) 30%, rgba(51, 136, 255, 0.1) 50%, transparent 70%);
+  animation: beamPulse 3s ease-in-out infinite 0.4s;
+}
+
+/* Четвертый луч - боковое свечение */
+.beam-4 {
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(ellipse at center, rgba(51, 136, 255, 0.2) 0%, rgba(51, 136, 255, 0.15) 15%, rgba(51, 136, 255, 0.1) 30%, rgba(51, 136, 255, 0.05) 45%, transparent 60%);
+  animation: beamPulse 3s ease-in-out infinite 0.6s;
+}
+
+/* Анимация пульсации света (движение вниз и расширение в стороны) */
+@keyframes beamPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scaleX(0.8);
+  }
+  20% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(20px) scaleX(0.9);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(40px) scaleX(1);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(60px) scaleX(1.1);
+  }
+  80% {
+    opacity: 0.2;
+    transform: translateX(-50%) translateY(80px) scaleX(1.2);
+  }
+}
+/* Альтернативная анимация с более резкими переходами */
+@keyframes sharpBeamPulse {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scaleX(0.7);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(15px) scaleX(0.85);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(30px) scaleX(1);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-50%) translateY(45px) scaleX(1.15);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(60px) scaleX(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(75px) scaleX(1.5);
+  }
+}
+/* Вариант с треугольной формой света (как луч прожектора) */
+.light-beam.triangle {
+  width: 150px;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(51, 136, 255, 0.8) 0%, rgba(51, 136, 255, 0.5) 30%, rgba(51, 136, 255, 0.2) 60%, transparent 100%);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+  animation: triangleBeam 3s ease-in-out infinite;
+}
+
+@keyframes triangleBeam {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scaleY(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(50px) scaleY(1);
+  }
+}
+/* Световые полосы (альтернативный дизайн) */
+.light-stripe {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(to bottom, rgba(51, 136, 255, 0.9), rgba(51, 136, 255, 0));
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: stripeFall 3s ease-in-out infinite;
+}
+
+.light-stripe.left {
+  left: 30%;
+  transform: translateX(-50%) rotate(-15deg);
+  animation-delay: 0.1s;
+}
+
+.light-stripe.right {
+  left: 70%;
+  transform: translateX(-50%) rotate(15deg);
+  animation-delay: 0.2s;
+}
+
+@keyframes stripeFall {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 80px;
+    opacity: 0.6;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

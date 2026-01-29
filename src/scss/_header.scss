@@ -1,0 +1,102 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(12px);
+  z-index: 99;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 9;
+
+    &__nav {
+      margin: auto;
+
+      nav {
+         display: flex;
+          align-items: center;
+          gap: 32px;
+
+          a.nav-item {
+            color: rgba(255, 255, 255, 0.70);
+            text-align: center;
+            font-family: "IBM Plex Sans";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+          }
+      }
+    }
+
+
+
+   .lang-switcher {
+      position: relative;
+
+        &__current {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          gap: 8px;
+
+          i {
+            transition: all .3s ease;
+          }
+        }
+
+        &__label {
+          color: #FFF;
+          font-family: "IBM Plex Sans";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px; 
+        }
+
+        &__list {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          display: none;
+          z-index: 10;
+        }
+      &__option {
+          cursor: pointer;
+        }
+
+    &--open {
+    
+        .lang-switcher__list {
+          display: block;
+        }
+
+        .lang-switcher__current i {
+          transform: rotate(180deg);
+        }
+      }
+  }   
+}
+
+.progress-container {
+  width: 100%;
+  height: 4px; /* Толщина полосы */
+  background: rgba(0, 0, 0, 0.1); /* Цвет фона полосы */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+

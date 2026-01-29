@@ -1,0 +1,377 @@
+.top-block {
+    height: 100vh;
+    padding-top: 97px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    &__label {
+        display: flex;
+        padding: 7px 17px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 33554400px;
+        border: 1px solid rgba(51, 136, 255, 0.15);
+        background: rgba(255, 255, 255, 0.10);
+        backdrop-filter: blur(6px);
+
+        i {
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+        }
+
+        span {
+            color: #FFF;
+            font-family: "IBM Plex Sans";
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__title {
+        flex-direction: column;
+        gap: 12px;
+        font-family: "IBM Plex Sans";
+        font-size: 72px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 68.4px;
+        letter-spacing: -3.6px;
+
+        div {
+            color: #FFF;
+        }
+    }
+
+    &__text {
+        color: rgba(255, 255, 255, 0.80);
+        font-family: "IBM Plex Sans";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 29px;
+        max-width: 505px;
+    }
+
+    &__digits {
+        margin-top: 36px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            div {
+                color: #FFF;
+                font-family: "IBM Plex Sans";
+                font-size: 28px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 36px; 
+            }
+
+            span {
+                color: rgba(255, 255, 255, 0.60);
+                font-family: "IBM Plex Sans";
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 16px;
+                letter-spacing: 0.6px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__link {
+        position: fixed;
+        right: 75px;
+        bottom: 115px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        border-radius: 100%;
+        animation: floatPulse 3s ease-in-out infinite;
+    }
+}
+
+@keyframes floatPulse {
+  0% {
+    transform: translateY(0);
+    box-shadow: 
+      0 4px 12px rgba(51, 136, 255, 0.3),
+      0 8px 24px rgba(51, 136, 255, 0.2);
+  }
+  
+  25% {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 8px 20px rgba(51, 136, 255, 0.4),
+      0 16px 40px rgba(51, 136, 255, 0.3),
+      0 24px 60px rgba(51, 136, 255, 0.2);
+  }
+  
+  50% {
+    transform: translateY(-12px);
+    box-shadow: 
+      0 12px 28px rgba(51, 136, 255, 0.5),
+      0 24px 56px rgba(51, 136, 255, 0.4),
+      0 36px 84px rgba(51, 136, 255, 0.3);
+  }
+  
+  75% {
+    transform: translateY(-8px);
+    box-shadow: 
+      0 8px 20px rgba(51, 136, 255, 0.4),
+      0 16px 40px rgba(51, 136, 255, 0.3),
+      0 24px 60px rgba(51, 136, 255, 0.2);
+  }
+  
+  100% {
+    transform: translateY(0);
+    box-shadow: 
+      0 4px 12px rgba(51, 136, 255, 0.3),
+      0 8px 24px rgba(51, 136, 255, 0.2);
+  }
+}
+
+.pulsing-btn {
+  width: 64px;
+  height: 64px;
+  background: #38F;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  z-index: 1;
+  
+  /* Легкая тень для кнопки */
+  box-shadow: 0 4px 20px rgba(51, 136, 255, 0.4);
+  transition: transform 0.3s ease;
+
+   animation: lanternFloat 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Анимация подъема кнопки (только вверх) */
+@keyframes lanternFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Стили для световых лучей */
+.light-beam {
+  position: absolute;
+  top: 100%; /* Начинаются от нижнего края кнопки */
+  left: 50%;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Первый луч - самый яркий и узкий */
+.beam-1 {
+  width: 80px;
+  height: 40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(51, 136, 255, 0.8) 0%,
+    rgba(51, 136, 255, 0.6) 20%,
+    rgba(51, 136, 255, 0.4) 40%,
+    rgba(51, 136, 255, 0.2) 60%,
+    transparent 80%
+  );
+  filter: brightness(1.1);
+  animation: beamPulse 3s ease-in-out infinite;
+}
+
+/* Второй луч - шире и мягче */
+.beam-2 {
+  width: 120px;
+  height: 60px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(51, 136, 255, 0.6) 0%,
+    rgba(51, 136, 255, 0.4) 20%,
+    rgba(51, 136, 255, 0.3) 40%,
+    rgba(51, 136, 255, 0.1) 60%,
+    transparent 80%
+  );
+  animation: beamPulse 3s ease-in-out infinite 0.2s;
+}
+
+/* Третий луч - самый широкий */
+.beam-3 {
+  width: 160px;
+  height: 80px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(51, 136, 255, 0.4) 0%,
+    rgba(51, 136, 255, 0.3) 15%,
+    rgba(51, 136, 255, 0.2) 30%,
+    rgba(51, 136, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: beamPulse 3s ease-in-out infinite 0.4s;
+}
+
+/* Четвертый луч - боковое свечение */
+.beam-4 {
+  width: 200px;
+  height: 100px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(51, 136, 255, 0.2) 0%,
+    rgba(51, 136, 255, 0.15) 15%,
+    rgba(51, 136, 255, 0.1) 30%,
+    rgba(51, 136, 255, 0.05) 45%,
+    transparent 60%
+  );
+  animation: beamPulse 3s ease-in-out infinite 0.6s;
+}
+
+/* Анимация пульсации света (движение вниз и расширение в стороны) */
+@keyframes beamPulse {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scaleX(0.8);
+  }
+  20% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(20px) scaleX(0.9);
+  }
+  40% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(40px) scaleX(1);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateX(-50%) translateY(60px) scaleX(1.1);
+  }
+  80% {
+    opacity: 0.2;
+    transform: translateX(-50%) translateY(80px) scaleX(1.2);
+  }
+}
+
+/* Альтернативная анимация с более резкими переходами */
+@keyframes sharpBeamPulse {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scaleX(0.7);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(15px) scaleX(0.85);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(30px) scaleX(1);
+  }
+  60% {
+    opacity: 0.6;
+    transform: translateX(-50%) translateY(45px) scaleX(1.15);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(60px) scaleX(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(75px) scaleX(1.5);
+  }
+}
+
+/* Вариант с треугольной формой света (как луч прожектора) */
+.light-beam.triangle {
+  width: 150px;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 136, 255, 0.8) 0%,
+    rgba(51, 136, 255, 0.5) 30%,
+    rgba(51, 136, 255, 0.2) 60%,
+    transparent 100%
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 0;
+  animation: triangleBeam 3s ease-in-out infinite;
+}
+
+@keyframes triangleBeam {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scaleY(0.5);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) translateY(50px) scaleY(1);
+  }
+}
+
+/* Световые полосы (альтернативный дизайн) */
+.light-stripe {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 4px;
+  height: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(51, 136, 255, 0.9),
+    rgba(51, 136, 255, 0)
+  );
+  transform: translateX(-50%);
+  border-radius: 2px;
+  animation: stripeFall 3s ease-in-out infinite;
+}
+
+.light-stripe.left {
+  left: 30%;
+  transform: translateX(-50%) rotate(-15deg);
+  animation-delay: 0.1s;
+}
+
+.light-stripe.right {
+  left: 70%;
+  transform: translateX(-50%) rotate(15deg);
+  animation-delay: 0.2s;
+}
+
+@keyframes stripeFall {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 80px;
+    opacity: 0.6;
+  }
+}
