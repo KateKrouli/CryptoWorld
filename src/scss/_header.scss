@@ -32,6 +32,10 @@ header {
             font-style: normal;
             font-weight: 700;
             line-height: 20px;
+
+             &:hover {
+              color: #FFF;
+            }
           }
       }
     }
@@ -64,18 +68,62 @@ header {
         &__list {
           position: absolute;
           top: 100%;
-          left: 0;
+          right: 0;
           display: none;
           z-index: 10;
+          padding: 8px 0;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          flex-shrink: 0;
+          align-self: stretch;
+          width: 224px;
+          border-radius: 16px;
+          border: 1.25px solid rgba(255, 255, 255, 0.10);
+          background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
       &__option {
+         list-style: none;
+          display: flex;
+          width:100%;
+          height: 56px;
+          padding: 0 16px 0;
+          justify-content: flex-start;
+          gap: 12px;
+          align-items: center;
+          flex-shrink: 0;
+          color: #FFF;
+          text-align: center;
+          font-size: 16px; 
+          font-style: normal;
+          font-weight: 600;
+          line-height: 24px;
+          letter-spacing: -0.312px;
           cursor: pointer;
+
+          &:hover {
+            color: var(--main-color);
+          }
+
+          &--selected {
+            color: var(--main-color);
+
+            &:after {
+              content: '';
+                display: inline-block;
+                width: 16px;
+                height: 16px;
+                margin-left: auto;
+            }
+          }
         }
 
     &--open {
     
         .lang-switcher__list {
-          display: block;
+          display: flex;
         }
 
         .lang-switcher__current i {
@@ -99,6 +147,6 @@ header {
   width: 0%;
   transition: width 0.1s ease;
   background: var(--main-color);
-  box-shadow: 0 0 20px 0 var(--main-color);
+  box-shadow: var(--main-color) 0 0 20px;
 }
 

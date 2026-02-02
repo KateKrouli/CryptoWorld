@@ -1,8 +1,8 @@
-.features {
+.cta {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 64px 0;
+    padding: 128px 0;
     gap: 64px;
     position: relative;
 
@@ -30,11 +30,10 @@
         justify-content: center;
         text-align: center;
         font-family: "IBM Plex Sans";
-        font-size: 48px;
+        font-size: 60px;
         font-style: normal;
         font-weight: 700;
-        line-height: 48px; 
-        letter-spacing: -1.2px;
+        line-height: 75px;
 
         span:first-child {
             color: #FFF;
@@ -49,27 +48,21 @@
         color: rgba(255, 255, 255, 0.60);
         text-align: center;
         font-family: "IBM Plex Sans";
-        font-size: 17.4px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 400;
         line-height: 28px;
-        margin-top: 16px;
+        margin-top: 28px;
     }
 
-    &__list {
+     &__list {
         display: flex;
         flex-wrap: nowrap;
         align-items: stretch;
         justify-content: stretch;
         gap: 32px;
-        opacity: 0;
-        transform: translateY(40px);
-        transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-        will-change: transform, opacity;
 
-        &.is-visible {
+        &.is-visible .cta__item {
             opacity: 1;
             transform: translateY(0);
         }
@@ -78,18 +71,25 @@
     &__item {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         gap: 16px;
         flex: 1;
         padding: 32px;
-        width: calc((100% - 32px * 3) / 4);
+        width: calc((100% - 32px * 2) / 3);
         border-radius: 24px;
         border: 1px solid rgba(255, 255, 255, 0.10);
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(6px);
         position: relative;
         transition: all .3s ease;
+        opacity: 0;
+        transform: scale(0.85);
+        transition:
+        opacity 0.45s ease,
+        transform 0.45s ease;
+        transition-delay: calc(var(--i) * 0.08s);
+        will-change: transform, opacity;
 
         &:before {
             content: '';
@@ -104,15 +104,7 @@
         }
 
         &:hover {
-            transform: translateY(-15px) ;
-
-             &:before {
-                opacity: 0.5;
-             }
-
-             .features__icon  {
-                transform: scale(1.1);
-             }
+           transform: scale(1.05);
         }
 
     }
@@ -125,8 +117,24 @@
         justify-content: center;
         align-items: center;
         border-radius: 16px;
+        border-radius: 16px;
+        background: rgba(51, 136, 255, 0.13);
         margin-bottom: 8px;
         transition: all .3s ease;
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+             right: 0;
+            border-radius: 100%;
+            opacity: 0.3;
+            background: var(--main-color);
+            filter: blur(8px);
+        }
 
         svg path {
             stroke: var(--main-color);
@@ -151,14 +159,7 @@
         line-height: 22.75px
     }
 
-    .circle--1 {
-        bottom: 64px;
-        left: -128px;
-        z-index: 0;
-    }
-    .circle--2 {
-        top: 0;
-        right: -128px;
-        z-index: 0;
+    &__btn > span  {
+        gap: 8px;
     }
 }

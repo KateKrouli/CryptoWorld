@@ -1,5 +1,17 @@
 (() => {
   // src/js/main.js
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (!target)
+        return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  });
   var body = document.body;
   var switcher = document.getElementById("langSwitcher");
   var currentBtn = switcher.querySelector(".lang-switcher__current");
@@ -28,6 +40,8 @@
       return;
     body.setAttribute("data-lang", lang);
     currentLabel.textContent = option.dataset.label;
+    options.forEach((o) => o.classList.remove("lang-switcher__option--selected"));
+    option.classList.add("lang-switcher__option--selected");
     localStorage.setItem(STORAGE_KEY, lang);
   }
   document.addEventListener("DOMContentLoaded", function() {
@@ -139,18 +153,16 @@
     animatedElements.forEach((el) => observer.observe(el));
   });
   document.addEventListener("DOMContentLoaded", () => {
-    const list = document.querySelector(".crypto__list");
-    const items = document.querySelectorAll(".crypto__item");
-    if (!list || !items.length)
+    const lists = document.querySelectorAll(
+      ".crypto__list, .security__list, .cta__list"
+    );
+    if (!lists.length)
       return;
-    items.forEach((item, index) => {
-      item.style.setProperty("--i", index);
-    });
     const observer = new IntersectionObserver(
       (entries, observer2) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            list.classList.add("is-visible");
+            entry.target.classList.add("is-visible");
             observer2.unobserve(entry.target);
           }
         });
@@ -159,11 +171,19 @@
         threshold: 0.3
       }
     );
-    observer.observe(list);
+    lists.forEach((list) => {
+      const items = list.querySelectorAll(
+        ".crypto__item, .security__item, .cta__item"
+      );
+      items.forEach((item, index) => {
+        item.style.setProperty("--i", index);
+      });
+      observer.observe(list);
+    });
   });
   document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll(
-      ".features__top, .features__list, .comparison__top, .comparison__tr, .security__top, .security__list, .faq__top, .faq__item"
+      ".features__top, .features__list, .comparison__top, .comparison__tr, .security__top, .faq__top, .faq__item, .cta__top"
     );
     if (!elements.length)
       return;

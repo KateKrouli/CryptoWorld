@@ -1,3 +1,20 @@
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        const target = document.querySelector(anchor.getAttribute('href'))
+        if (!target) return
+
+        e.preventDefault()
+
+        target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
+    })
+})
+
+
+
 const body = document.body
 const switcher = document.getElementById('langSwitcher')
 const currentBtn = switcher.querySelector('.lang-switcher__current')
@@ -38,6 +55,10 @@ function applyLang(lang) {
 
   // label
   currentLabel.textContent = option.dataset.label
+
+  // selected class
+  options.forEach(o => o.classList.remove('lang-switcher__option--selected'))
+  option.classList.add('lang-switcher__option--selected')
 
   // localStorage
   localStorage.setItem(STORAGE_KEY, lang)
@@ -203,20 +224,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const list = document.querySelector('.crypto__list');
-    const items = document.querySelectorAll('.crypto__item');
+    const lists = document.querySelectorAll(
+        '.crypto__list, .security__list, .cta__list'
+    );
 
-    if (!list || !items.length) return;
-
-    items.forEach((item, index) => {
-        item.style.setProperty('--i', index);
-    });
+    if (!lists.length) return;
 
     const observer = new IntersectionObserver(
         (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    list.classList.add('is-visible');
+                    entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
             });
@@ -226,12 +244,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     );
 
-    observer.observe(list);
+    lists.forEach(list => {
+        const items = list.querySelectorAll(
+            '.crypto__item, .security__item, .cta__item'
+        );
+
+        items.forEach((item, index) => {
+            item.style.setProperty('--i', index);
+        });
+
+        observer.observe(list);
+    });
 });
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const elements = document.querySelectorAll(
-        '.features__top, .features__list, .comparison__top, .comparison__tr, .security__top, .security__list, .faq__top, .faq__item'
+        '.features__top, .features__list, .comparison__top, .comparison__tr, .security__top, .faq__top, .faq__item, .cta__top', 
     );
 
     if (!elements.length) return;

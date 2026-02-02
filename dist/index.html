@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <title data-i18n="title">Crypto World</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/styles.css">
 </head> 
-<body data-theme="1xbet">
+<body data-theme="melbet">
   <header>
      <div class="progress-container">
         <div class="progress-bar" id="progressBar"></div>
@@ -27,7 +28,7 @@
         </div>
         <div class="lang-switcher" id="langSwitcher">
             <button class="lang-switcher__current" type="button">
-                <span class="lang-switcher__label">EN</span>
+                 <span class="lang-switcher__label">EN</span>
                 <i><svg xmlns="http://www.w3.org/2000/svg" width="9" height="5" viewBox="0 0 9 5" fill="none">
                     <path d="M0.583496 0.583252L4.0835 4.08325L7.5835 0.583252" stroke="white" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"></path>
                     </svg>
@@ -35,11 +36,19 @@
             </button>
 
             <ul class="lang-switcher__list">
-                <li class="lang-switcher__option" data-lang="en" data-label="EN">English</li>
-                <li class="lang-switcher__option" data-lang="tr" data-label="TR">Türkçe</li>
-                <li class="lang-switcher__option" data-lang="sa" data-label="SA">العربية</li>
-                <li class="lang-switcher__option" data-lang="ir" data-label="IR">فارسی</li>
-                <li class="lang-switcher__option" data-lang="az" data-label="AZ">Azərbaycan</li>
+                <li class="lang-switcher__option" data-lang="en" data-label="EN">
+                    <img src="images/en.webp" alt="EN Flag" class="lang-switcher__flag">
+                    English
+                </li>
+                <li class="lang-switcher__option" data-lang="tr" data-label="TR">
+                    <img src="images/tr.webp" alt="TR Flag" class="lang-switcher__flag">Türkçe</li>
+                <li class="lang-switcher__option" data-lang="sa" data-label="SA">
+                <img src="images/sa.webp" alt="SA Flag" class="lang-switcher__flag">العربية</li>
+                <li class="lang-switcher__option" data-lang="ir" data-label="IR">
+                <img src="images/ir.webp" alt="IR Flag" class="lang-switcher__flag">فارسی</li>
+                <li class="lang-switcher__option" data-lang="az" data-label="AZ">
+                    <img src="images/az.webp" alt="AZ Flag" class="lang-switcher__flag">
+                Azərbaycan</li>
             </ul>
             </div>
 
@@ -81,7 +90,7 @@
             </div>
         </div>
     </div>
-    <a href="" class="top-block__link">
+    <a href="#cta" class="top-block__link">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
             <path d="M5.24984 19.2499C3.49984 20.7199 2.9165 25.0832 2.9165 25.0832C2.9165 25.0832 7.27984 24.4999 8.74984 22.7499C9.57817 21.7699 9.5665 20.2649 8.64484 19.3549C8.19136 18.9221 7.59401 18.672 6.96743 18.6526C6.34086 18.6332 5.72919 18.8459 5.24984 19.2499Z" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
             <path d="M14 17.5L10.5 14C11.1208 12.3893 11.9026 10.8454 12.8333 9.39163C14.1927 7.21811 16.0856 5.42852 18.3318 4.19307C20.5781 2.95762 23.1031 2.3174 25.6667 2.3333C25.6667 5.50663 24.7567 11.0833 18.6667 15.1666C17.193 16.0985 15.6297 16.8802 14 17.5Z" stroke="white" stroke-width="2.91667" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -613,8 +622,8 @@
                     </svg>
                 </i>
             </div>
-            <div class="faq__answer" data-i18n="faq.item1.answer">
-                Cryptocurrency withdrawals are processed instantly and appear in your wallet within minutes after blockchain confirmation. No waiting days like traditional banking.
+            <div class="faq__answer">
+               <p data-i18n="faq.item1.answer">Cryptocurrency withdrawals are processed instantly and appear in your wallet within minutes after blockchain confirmation. No waiting days like traditional banking.</p>
             </div>
         </div>
         <div class="faq__item">
@@ -626,8 +635,8 @@
                     </svg>
                 </i>
             </div>
-            <div class="faq__answer" data-i18n="faq.item2.answer">
-               No! One of the biggest advantages of crypto betting is complete anonymity. You can deposit, bet, and withdraw without providing any personal documents.
+            <div class="faq__answer">
+               <p data-i18n="faq.item2.answer">No! One of the biggest advantages of crypto betting is complete anonymity. You can deposit, bet, and withdraw without providing any personal documents.</p>
             </div>
         </div>
         <div class="faq__item">
@@ -639,8 +648,8 @@
                     </svg>
                 </i>
             </div>
-            <div class="faq__answer" data-i18n="faq.item3.answer">
-                We charge 0% commission on all crypto transactions. You only pay minimal blockchain network fees, which are typically under $1.
+            <div class="faq__answer">
+               <p data-i18n="faq.item3.answer">We charge 0% commission on all crypto transactions. You only pay minimal blockchain network fees, which are typically under $1.</p>
             </div>
         </div>
          <div class="faq__item">
@@ -652,8 +661,8 @@
                     </svg>
                 </i>
                 </div>
-            <div class="faq__answer" data-i18n="faq.item4.answer">
-                We support 30+ cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), Tether (USDT), BNB, Solana (SOL), Litecoin (LTC), Dogecoin (DOGE), and many more.
+            <div class="faq__answer">
+                <p data-i18n="faq.item4.answer">We support 30+ cryptocurrencies including Bitcoin (BTC), Ethereum (ETH), Tether (USDT), BNB, Solana (SOL), Litecoin (LTC), Dogecoin (DOGE), and many more.</p>
             </div>
         </div>
         <div class="faq__item">
@@ -665,8 +674,8 @@
                     </svg>
                 </i>
             </div>
-            <div class="faq__answer" data-i18n="faq.item5.answer">
-                We have no deposit or withdrawal limits! Bet as small or as big as you want. Your funds, your rules.
+            <div class="faq__answer">
+                <p data-i18n="faq.item5.answer">We have no deposit or withdrawal limits! Bet as small or as big as you want. Your funds, your rules.</p>
             </div>
         </div>
         <div class="faq__item">
@@ -678,20 +687,90 @@
                     </svg>
                 </i>
                 </div>
-            <div class="faq__answer" data-i18n="faq.item6.answer">
-                Crypto transactions are secured by blockchain technology with military-grade encryption. We also use cold storage for 95% of funds and 2FA authentication for maximum security.
+            <div class="faq__answer">
+                <p data-i18n="faq.item6.answer">Crypto transactions are secured by blockchain technology with military-grade encryption. We also use cold storage for 95% of funds and 2FA authentication for maximum security.</p>
             </div>
         </div>
     </div>
+    <div class="faq__bottom">
+        <span data-i18n="faq.bottom.span">Still have questions?</span>
+        <a href="" data-i18n="aq.bottom.link">Contact our 24/7 support</a>
+    </div>
+</section>
+  <section class="cta" id="cta">
+    <div class="cta__top">
+        <h2 class="cta__title cta__title--1xbet">
+            <span data-i18n="cta.title.top">Ready to Start?</span>
+            <span data-i18n="cta.title.bottom.xbet">Join 1xBet Today</span>
+        </h2>
+        <h2 class="cta__title cta__title--melbet">
+            <span data-i18n="cta.title.top">Ready to Start?</span>
+            <span data-i18n="cta.title.bottom.melbet">Join Melbet Today</span>
+        </h2>
+        <div class="cta__text" data-i18n="cta.text">
+            Experience the future of crypto betting with instant withdrawals, zero fees, and complete anonymity.
+        </div>
+    </div>
+    <div class="cta__list main-width">
+        <div class="cta__item">
+             <div class="cta__icon">
+             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M26.6668 17.3333C26.6668 23.9999 22.0002 27.3333 16.4535 29.2666C16.163 29.365 15.8475 29.3603 15.5602 29.2533C10.0002 27.3333 5.3335 23.9999 5.3335 17.3333V7.99995C5.3335 7.64633 5.47397 7.30719 5.72402 7.05714C5.97407 6.80709 6.31321 6.66662 6.66683 6.66662C9.3335 6.66662 12.6668 5.06662 14.9868 3.03995C15.2693 2.79861 15.6286 2.66602 16.0002 2.66602C16.3717 2.66602 16.731 2.79861 17.0135 3.03995C19.3468 5.07995 22.6668 6.66662 25.3335 6.66662C25.6871 6.66662 26.0263 6.80709 26.2763 7.05714C26.5264 7.30719 26.6668 7.64633 26.6668 7.99995V17.3333Z" stroke="#3388FF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="cta__item-title" data-i18n="cta.item1.title">100% Secure</div>
+            <div class="cta__item-text" data-i18n="cta.item1.text">
+               Bank-level encryption
+            </div>
+        </div>
+        <div class="cta__item">
+             <div class="cta__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M5.33349 18.6675C5.08117 18.6684 4.83379 18.5976 4.62009 18.4635C4.40639 18.3294 4.23513 18.1373 4.12622 17.9097C4.01731 17.6821 3.97521 17.4283 4.00482 17.1777C4.03443 16.9272 4.13453 16.6901 4.29349 16.4942L17.4935 2.8942C17.5925 2.77991 17.7274 2.70268 17.8761 2.67518C18.0248 2.64768 18.1785 2.67155 18.3118 2.74287C18.4451 2.8142 18.5503 2.92873 18.6099 3.06768C18.6696 3.20663 18.6803 3.36173 18.6402 3.50754L16.0802 11.5342C16.0047 11.7362 15.9793 11.9536 16.0063 12.1675C16.0332 12.3815 16.1117 12.5858 16.2349 12.7628C16.3582 12.9398 16.5225 13.0842 16.7139 13.1837C16.9052 13.2833 17.1178 13.3349 17.3335 13.3342H26.6668C26.9191 13.3333 27.1665 13.4041 27.3802 13.5382C27.5939 13.6724 27.7652 13.8644 27.8741 14.092C27.983 14.3196 28.0251 14.5734 27.9955 14.824C27.9659 15.0746 27.8658 15.3116 27.7068 15.5075L14.5068 29.1075C14.4078 29.2218 14.2729 29.2991 14.1242 29.3266C13.9755 29.3541 13.8219 29.3302 13.6885 29.2589C13.5552 29.1875 13.45 29.073 13.3904 28.9341C13.3307 28.7951 13.32 28.64 13.3602 28.4942L15.9202 20.4675C15.9956 20.2655 16.021 20.0482 15.994 19.8342C15.9671 19.6202 15.8886 19.416 15.7654 19.239C15.6421 19.062 15.4778 18.9175 15.2865 18.818C15.0951 18.7185 14.8825 18.6668 14.6668 18.6675H5.33349Z" stroke="#3388FF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="cta__item-title" data-i18n="cta.item2.title">Instant Payouts</div>
+            <div class="cta__item-text" data-i18n="cta.item2.text">
+               Within 5 minutes
+            </div>
+        </div>
+        <div class="cta__item">
+             <div class="cta__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M15.9998 29.3327C23.3636 29.3327 29.3332 23.3631 29.3332 15.9993C29.3332 8.63555 23.3636 2.66602 15.9998 2.66602C8.63604 2.66602 2.6665 8.63555 2.6665 15.9993C2.6665 23.3631 8.63604 29.3327 15.9998 29.3327Z" stroke="#3388FF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M15.9998 2.66602C12.5761 6.26089 10.6665 11.035 10.6665 15.9993C10.6665 20.9637 12.5761 25.7378 15.9998 29.3327C19.4235 25.7378 21.3332 20.9637 21.3332 15.9993C21.3332 11.035 19.4235 6.26089 15.9998 2.66602Z" stroke="#3388FF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2.6665 16H29.3332" stroke="#3388FF" stroke-width="2.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+            <div class="cta__item-title" data-i18n="cta.item3.title">30+ Cryptos</div>
+            <div class="cta__item-text" data-i18n="cta.item3.text">
+               All major coins
+            </div>
+        </div>
+    </div>
+    <div class="cta__bottom">
+        <a class="btn cta__btn" href=""><span><span data-i18n="cta.btn">Get Started Now</span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M4.1665 10H15.8332" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M10 4.16602L15.8333 9.99935L10 15.8327" stroke="white" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg></span></a>
+    </div>
 </section>
 
-  
-  
-  <footer><div class="footer">
-    <div class="footer__line footer__line--1"></div>
-    <div class="footer__btn"><div data-i18="footer.btn">Share Journey</div></div>
-    <div class="footer__line footer__line--2"></div>
-</div>
+  <footer>
+    <div class="footer main-width footer--1xbet">
+        <div class="footer__logo"><img src="images/logo-1xbet.webp"></div>
+        <div class="footer__text">
+            <span data-i18n="footer.text.xbet">© 2026 1xBet. All rights reserved.</span>
+            <a href="" data-i18n="footer.link">Use of this website constitutes acceptance of the Terms of Service and Privacy Policy.</a>
+        </div>
+    </div>
+    <div class="footer main-width footer--melbet">
+        <div class="footer__logo"><img src="images/logo-melbet.webp"></div>
+        <div class="footer__text">
+            <span data-i18n="footer.text.xbet">© 2026 Melbet. All rights reserved.</span>
+            <a href="" data-i18n="footer.link">Use of this website constitutes acceptance of the Terms of Service and Privacy Policy.</a>
+        </div>
+    </div>
 </footer>
   <script type="module" src="/js/main.js"></script>
 </body> 

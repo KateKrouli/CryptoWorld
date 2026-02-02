@@ -239,8 +239,8 @@
 
     &__link {
         position: fixed;
-        right: 75px;
-        bottom: 115px;
+        right: 35px;
+        bottom: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -281,45 +281,6 @@
   }
 
 
-@keyframes floatPulse {
-  0% {
-    transform: translateY(0);
-    box-shadow: 
-      0 4px 12px rgba(51, 136, 255, 0.3),
-      0 8px 24px rgba(51, 136, 255, 0.2);
-  }
-  
-  25% {
-    transform: translateY(-8px);
-    box-shadow: 
-      0 8px 20px rgba(51, 136, 255, 0.4),
-      0 16px 40px rgba(51, 136, 255, 0.3),
-      0 24px 60px rgba(51, 136, 255, 0.2);
-  }
-  
-  50% {
-    transform: translateY(-12px);
-    box-shadow: 
-      0 12px 28px rgba(51, 136, 255, 0.5),
-      0 24px 56px rgba(51, 136, 255, 0.4),
-      0 36px 84px rgba(51, 136, 255, 0.3);
-  }
-  
-  75% {
-    transform: translateY(-8px);
-    box-shadow: 
-      0 8px 20px rgba(51, 136, 255, 0.4),
-      0 16px 40px rgba(51, 136, 255, 0.3),
-      0 24px 60px rgba(51, 136, 255, 0.2);
-  }
-  
-  100% {
-    transform: translateY(0);
-    box-shadow: 
-      0 4px 12px rgba(51, 136, 255, 0.3),
-      0 8px 24px rgba(51, 136, 255, 0.2);
-  }
-}
 
 /* Анимация подъема кнопки (только вверх) */
 @keyframes lanternFloat {
@@ -347,14 +308,7 @@
 .beam-1 {
   width: 80px;
   height: 40px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(51, 136, 255, 0.8) 0%,
-    rgba(51, 136, 255, 0.6) 20%,
-    rgba(51, 136, 255, 0.4) 40%,
-    rgba(51, 136, 255, 0.2) 60%,
-    transparent 80%
-  );
+ 
   filter: brightness(1.1);
   animation: beamPulse 3s ease-in-out infinite;
 }
@@ -363,14 +317,6 @@
 .beam-2 {
   width: 120px;
   height: 60px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(51, 136, 255, 0.6) 0%,
-    rgba(51, 136, 255, 0.4) 20%,
-    rgba(51, 136, 255, 0.3) 40%,
-    rgba(51, 136, 255, 0.1) 60%,
-    transparent 80%
-  );
   animation: beamPulse 3s ease-in-out infinite 0.2s;
 }
 
@@ -378,14 +324,6 @@
 .beam-3 {
   width: 160px;
   height: 80px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(51, 136, 255, 0.4) 0%,
-    rgba(51, 136, 255, 0.3) 15%,
-    rgba(51, 136, 255, 0.2) 30%,
-    rgba(51, 136, 255, 0.1) 50%,
-    transparent 70%
-  );
   animation: beamPulse 3s ease-in-out infinite 0.4s;
 }
 
@@ -393,14 +331,6 @@
 .beam-4 {
   width: 200px;
   height: 100px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(51, 136, 255, 0.2) 0%,
-    rgba(51, 136, 255, 0.15) 15%,
-    rgba(51, 136, 255, 0.1) 30%,
-    rgba(51, 136, 255, 0.05) 45%,
-    transparent 60%
-  );
   animation: beamPulse 3s ease-in-out infinite 0.6s;
 }
 
